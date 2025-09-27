@@ -1,0 +1,220 @@
+/* Hero.css - center stage + animations */
+:root {
+    --parallax-x: 0px;
+    --parallax-y: 0px;
+  }
+  
+  /* container */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 680px;
+    background: linear-gradient(180deg, #fffdf6 0%, #fff8f0 100%);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+  }
+  
+  /* parallax soft background (a very subtle leaf-ish radial) */
+  .parallax-bg {
+    position: absolute;
+    inset: -20% -20% auto -20%;
+    height: 140%;
+    background-image:
+      radial-gradient(circle at 10% 10%, rgba(255,215,0,0.06), transparent 8%),
+      radial-gradient(circle at 90% 90%, rgba(220,20,60,0.04), transparent 10%),
+      radial-gradient(circle at 50% 50%, rgba(128,0,0,0.03), transparent 30%),
+      linear-gradient(180deg, rgba(255,250,240,1), rgba(255,245,238,0.9));
+    transform: translate(var(--parallax-x), var(--parallax-y)) scale(1.05);
+    filter: blur(28px);
+    z-index: 0;
+  }
+  
+  /* floating ingredient icons */
+  .ingredients {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 900px;
+    height: 200px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* base ingredient style */
+  .ingredient {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    display: inline-block;
+    will-change: transform, opacity;
+  }
+  
+  /* different start points & animation delays */
+  .ing-1 { left: 10%; animation: fly1 6.5s ease-in-out infinite; animation-delay: 0.2s;}
+  .ing-2 { left: 25%; animation: fly2 7.2s ease-in-out infinite; animation-delay: 0.6s;}
+  .ing-3 { left: 45%; animation: fly3 6.8s ease-in-out infinite; animation-delay: 1s;}
+  .ing-4 { left: 65%; animation: fly4 8s ease-in-out infinite; animation-delay: 0.4s;}
+  .ing-5 { left: 82%; animation: fly5 7.6s ease-in-out infinite; animation-delay: 0.9s;}
+  
+  /* quick keyframes that move toward center then float up slightly */
+  @keyframes fly1 {
+    0% { transform: translate(-80px, 120px) scale(0.6) rotate(-10deg); opacity: 0; }
+    40% { transform: translate(0, 0) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translate(0, -40px) scale(1) rotate(8deg); opacity: 0.12; }
+  }
+  @keyframes fly2 {
+    0% { transform: translate(-120px, 140px) scale(0.6) rotate(30deg); opacity: 0; }
+    38% { transform: translate(0, 6px) scale(1) rotate(5deg); opacity: 1; }
+    100% { transform: translate(0, -60px) scale(1) rotate(-6deg); opacity: 0.12; }
+  }
+  @keyframes fly3 {
+    0% { transform: translate(120px, 160px) scale(0.6) rotate(-20deg); opacity: 0; }
+    36% { transform: translate(0, 0) scale(1) rotate(2deg); opacity: 1; }
+    100% { transform: translate(0, -50px) scale(1) rotate(10deg); opacity: 0.12; }
+  }
+  @keyframes fly4 {
+    0% { transform: translate(160px, 130px) scale(0.6) rotate(15deg); opacity: 0; }
+    42% { transform: translate(0, 8px) scale(1) rotate(-3deg); opacity: 1; }
+    100% { transform: translate(0, -35px) scale(1) rotate(6deg); opacity: 0.12; }
+  }
+  @keyframes fly5 {
+    0% { transform: translate(-50px, 180px) scale(0.6) rotate(-8deg); opacity: 0; }
+    40% { transform: translate(0, 4px) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translate(0, -30px) scale(1) rotate(-10deg); opacity: 0.12; }
+  }
+  
+  /* steam puffs above title */
+  .steam {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .steam span {
+    width: 18px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.4));
+    opacity: 0.9;
+    filter: blur(6px);
+    transform-origin: center;
+    animation: steam-rise 3s ease-in-out infinite;
+  }
+  .steam span:nth-child(2) { animation-delay: 0.4s; width: 14px; height: 18px; }
+  .steam span:nth-child(3) { animation-delay: 0.8s; width: 10px; height: 14px; opacity: 0.7; }
+  
+  @keyframes steam-rise {
+    0% { transform: translateY(0) scale(0.9); opacity: 0; }
+    20% { opacity: 0.6; }
+    70% { transform: translateY(-60px) scale(1.2); opacity: 0.18; }
+    100% { transform: translateY(-110px) scale(1.45); opacity: 0; }
+  }
+  
+  /* main content sits above the effects */
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 980px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* logo */
+  .hero-logo {
+    width: 86px;
+    height: 86px;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 14px;
+  }
+  
+  /* title + typewriter */
+  .hero-title {
+    margin: 0;
+    font-weight: 900;
+    font-size: 2.1rem;
+    color: #7a2b26; /* deep red text */
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.06);
+    line-height: 1.02;
+    max-width: 90%;
+    margin-bottom: 12px;
+  }
+  
+  /* typewriter inner */
+  .typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 0.16em solid rgba(0,0,0,0.12);
+    /* characters count: 41 — adjust if you change text */
+    width: 41ch;
+    animation:
+      typing 2.6s steps(41, end) 0.3s forwards,
+      blink 0.75s step-end infinite;
+  }
+  
+  /* tagline */
+  .hero-tagline {
+    color: #4a4a4a;
+    margin-top: 12px;
+    font-size: 1.05rem;
+    max-width: 700px;
+  }
+  
+  /* CTAs - red & gold */
+  .hero-ctas {
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  .btn.red {
+    background: linear-gradient(180deg,#b00000,#800000);
+    color: #fff;
+  }
+  .btn.gold {
+    background: linear-gradient(180deg,#ffd54f,#e6b800);
+    color: #6b2b00;
+  }
+  
+  /* keyframes for typewriter */
+  @keyframes typing {
+    from { width: 0ch; }
+    to { width: 41ch; } /* must match steps(...) above */
+  }
+  @keyframes blink {
+    50% { border-color: rgba(0,0,0,0.0); }
+  }
+  
+  /* responsive sizes */
+  @media (min-width: 720px) {
+    .hero-title { font-size: 3rem; }
+    .typewriter { width: 48ch; animation-duration: 2.8s; }
+  }
+  @media (min-width: 1100px) {
+    .hero-title { font-size: 4.2rem; }
+    .typewriter { width: 52ch; animation-duration: 3.2s; }
+  }
+  

@@ -1,0 +1,219 @@
+.catering-wrapper {
+    max-width: 800px;
+    margin: auto;
+    background: #800000;
+    color: #ffd700;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #ffd700;
+    padding-bottom: 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+  
+  .pack-display {
+    margin: 1rem 0;
+    background: rgba(255,215,0,0.1);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .pack-display h3 {
+    color: #ffd700;
+    margin-bottom: 0.3rem;
+  }
+  
+  .checkbox {
+    display: block;
+    margin: 0.3rem 0;
+  }
+  
+  .manual-add {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .manual-add input {
+    flex: 1;
+  }
+  
+  .manual-add button {
+    background: #ffd700;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #800000;
+    font-weight: bold;
+  }
+  
+  .manual-add button:hover {
+    background: #ffea80;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background: linear-gradient(90deg, #ffd700, #ffa500);
+    color: #800000;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .submit-btn:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 600px) {
+    .catering-wrapper {
+      padding: 1rem;
+    }
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+  
+
+/* CateringQuotation.css */
+.catering-section {
+  background: linear-gradient(135deg, #8b0000, #b22222, #d4af37);
+  min-height: 100vh;
+    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catering-title {
+    font-size: 2rem;
+  font-weight: bold;
+  color: gold;
+    margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.catering-form {
+  background: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 20px;
+  width: 95%;
+    max-width: 500px;
+  display: flex;
+  flex-direction: column;
+    gap: 1rem;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+}
+
+.catering-form label {
+  font-weight: 600;
+  color: gold;
+}
+
+  .catering-form input {
+    padding: 0.6rem;
+    border-radius: 8px;
+  border: 2px solid gold;
+  outline: none;
+  background: #fff;
+  color: #000;
+}
+
+  .accordion details {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid gold;
+    border-radius: 10px;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+}
+
+  .accordion summary {
+  font-weight: bold;
+  color: gold;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  display: block;
+  margin-left: 1rem;
+  color: #fff;
+}
+
+  .custom-dish-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+  .custom-dish-input button {
+  background: gold;
+  border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+  .custom-dish-list {
+    margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+  .custom-dish-list li {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 215, 0, 0.1);
+    padding: 0.4rem 0.6rem;
+  margin-bottom: 0.3rem;
+    border-radius: 8px;
+  color: #fff;
+}
+
+.submit-btn {
+  background: gold;
+  color: #8b0000;
+  font-weight: bold;
+    padding: 0.7rem;
+    border-radius: 10px;
+  border: none;
+  cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #ffd700;
+    transform: scale(1.05);
+  }
+  

@@ -1,0 +1,65 @@
+.homepage {
+  height: 102vh;
+  width: 100vw;
+  background-image: url('./hoo.png');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.navbar {
+  display: flex;
+  gap: 30px;
+  position: absolute;    
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  color: white;
+  font-family: 'Gill Sans', Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+
+}
+
+.hero-button {
+  position: absolute;
+  top: 65%;           /* adjust this until it's just below the text in your image */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-btn {
+  background-color: #eabe39;
+  width: 180px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-family: 'Gill Sans', Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* 📱 Responsive fix */
+@media (max-width: 768px) {
+  .homepage{
+    background-image: url('./shome.png');
+    background-size: cover;
+  }
+  .hero-button {
+    top: 60%; /* push button lower for smaller screens */
+  }
+  .home-btn {
+    width: 150px;
+    font-size: 18px;
+  }
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
