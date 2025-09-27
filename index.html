@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banana Leaf Hero</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #fffdf6;
+      font-family: sans-serif;
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .hero {
+      position: relative;
+      width: 80%;
+      height: 70%;
+      background: url('banana.png') no-repeat center/cover;
+      overflow: hidden;
+    }
+
+    .food {
+      position: absolute;
+      opacity: 0;
+      transform: scale(2.5) translateY(-40px);
+      transition: all 0.8s ease;
+    }
+
+    .food.show {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+
+    /* Positions for each food item */
+    .rice { top: 160px; left: 200px; width: 120px; }
+    .curry { top: 100px; left: 340px; width: 20%; }
+    .papad { top: 60px; left: 80px; width: 100px; }
+    .sweet { top: 250px; left: 150px; width: 80px; }
+    .chutney { top: 200px; left: 350px; width: 70px; }
+
+    /* Call-to-action */
+    .cta {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      color: #2c3e50;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .cta.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="rice.png" class="food rice" />
+    <img src="chicken.png" class="food curry" />
+    <img src="papad.png" class="food papad" />
+    <img src="sweet.png" class="food sweet" />
+    <img src="chutney.png" class="food chutney" />
+  </div>
+
+  <div class="cta" id="cta">
+    🍛 Your feast is ready! <br/>
+    <button onclick="window.location.href='menu.html'" style="margin-top:10px;padding:10px 20px;border:none;border-radius:8px;background:#27ae60;color:white;cursor:pointer;">
+      View Menu
+    </button>
+  </div>
+
+  <script>
+    const foods = document.querySelectorAll('.food');
+    const cta = document.getElementById('cta');
+
+    foods.forEach((item, index) => {
+      setTimeout(() => {
+        item.classList.add('show');
+        // After last food, show CTA
+        if (index === foods.length - 1) {
+          setTimeout(() => {
+            cta.classList.add('show');
+          }, 800);
+        }
+      }, index * 1000); // delay each food by 1s
+    });
+  </script>
+
+</body>
+</html>
