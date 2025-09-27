@@ -48,7 +48,7 @@
 /* 📱 Responsive fix */
 @media (max-width: 768px) {
   .homepage{
-    background-image: url('./shome.png');
+    background-image: url('/shome.png');
     background-size: cover;
   }
   .hero-button {
