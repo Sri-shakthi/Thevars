@@ -1,6 +1,8 @@
 // AboutSection.jsx
 import React from "react";
 import "./index.css";
+import foImage from "../../assets/fo.png";
+import ssImage from "../../assets/ss.png";
 
 const AboutSection = () => {
   return (
@@ -8,7 +10,7 @@ const AboutSection = () => {
       {/* First container - Image left, Text right */}
       <div className="about-container fade-in">
         <div className="about-image">
-          <img src="fo.png" alt="First Restaurant in Kandiyur 1965" />
+          <img src={foImage} alt="First Restaurant in Kandiyur 1965" />
         </div>
         <div className="about-text">
           <h2>Our Journey Began</h2>
@@ -31,7 +33,7 @@ const AboutSection = () => {
       {/* Second container - Text left, Image right */}
       <div className="about-container fade-in reverse">
       <div className="about-image">
-          <img src="ss.png" alt="Thevars Biryani in 1990s" />
+          <img src={ssImage} alt="Thevars Biryani in 1990s" />
         </div>
         <div className="about-text">
         <h2>Carrying Forward the Legacy</h2>
