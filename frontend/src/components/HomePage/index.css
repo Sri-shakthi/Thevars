@@ -1,7 +1,7 @@
 .homepage {
   height: 102vh;
   width: 100vw;
-  background-image: url('../../assets/hoo.png');
+  background-image: var(--desktop-bg);
   background-size: cover;
   display: flex;
   align-items: center;
@@ -48,7 +48,7 @@
 /* 📱 Responsive fix */
 @media (max-width: 768px) {
   .homepage{
-    background-image: url('../../assets/shome.png');
+    background-image: var(--mobile-bg);
     background-size: cover;
   }
   .hero-button {
