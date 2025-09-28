@@ -1,6 +1,7 @@
 .homepage {
   height: 102vh;
   width: 100vw;
+  background-image: url('/hoo.png');
   background-size: cover;
   display: flex;
   align-items: center;
