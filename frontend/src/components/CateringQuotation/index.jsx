@@ -206,6 +206,7 @@ const handleSubmit = async (e) => {
       });
 
       const result = await res.json();
+      console.log(result, "rrrrrr")
       if (res.ok && result.status === "success") {
         setIsSubmitted(true);
       } else {
