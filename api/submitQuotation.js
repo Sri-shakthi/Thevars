@@ -16,6 +16,7 @@ export default async function handler(req, res) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
+    console.log(sheetResponse, "sheetResponse")
 
     if (!sheetResponse.ok) {
         const errText = await sheetResponse.text();
