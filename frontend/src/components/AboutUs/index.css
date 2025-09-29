@@ -9,7 +9,6 @@
 .about-container {
   display: flex;
   width: 100%;
-    min-height: 550px; /* ensures good height */
   align-items: stretch;
 }
 
@@ -18,25 +17,22 @@
 }
 
   /* Image styling - force 50% */
-.about-image {
-  flex: 1;
-    width: 50vw;
-}
 
 .about-image img {
-  width: 100%;
-  height: 100%;
+  width: 540px;
   display: block;
+  border-radius: 20px;
+  margin: 20px;
 }
 
   /* Text styling - force 50% */
 .about-text {
-  flex: 1;
-    width: 50vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  margin: 20px;
+
 
 }
 

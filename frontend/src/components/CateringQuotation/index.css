@@ -108,8 +108,8 @@
 
 /* CateringQuotation.css */
 .catering-section {
-  background: linear-gradient(135deg, #8b0000, #b22222, #d4af37);
-  min-height: 100vh;
+  background: linear-gradient(235deg, #8b000029, #b22222, #a192d9);
+    min-height: 100vh;
     padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -125,7 +125,7 @@
 }
 
 .catering-form {
-  background: rgba(0, 0, 0, 0.6);
+  background: #0000000a;
     padding: 2rem;
     border-radius: 20px;
   width: 95%;

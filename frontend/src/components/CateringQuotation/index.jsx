@@ -2,89 +2,324 @@
 import React, { useState } from "react";
 import "./index.css";
 
+
+
 const packs = {
+  briyaniPack: {
+      name: "Briyani Pack",
+      starters: [
+          "Chicken 65 (50gm)",
+          "Chicken Gravy (60gm)",
+          "Chicken Chettinad Gravy (60gm)",
+          "Pallipalayam Chicken (60gm)",
+          "Nattu Kozhi Peratal (60gm)",
+          "Viral Fish Fry (1 No.)",
+          "Vanjaram Fish Fry (1 No.)",
+          "Kendai Meen Fry (1 No.)",
+          "Prawn Thokku (30gm)",
+          "Mutton Sukka (50gm)",
+          "Kadai 65 1/2",
+      ],
+      main: [
+          // Mutton Soup is listed here in the original 'main' but is often a starter/appetizer
+          "Mutton Soup (மட்டன் சூப்)", 
+          "Mutton Biriyani (100 gm mutton)",
+          "Chicken Biriyani (2pc Chicken 50gm)",
+          "Boiled Egg (வேகவைத்த முட்டை) - 1 No.",
+          "Egg Masala (முட்டை மசாலா) - 1 No.",
+          "Karandi Omelette (கரண்டி ஆம்லெட்)",
+          "Sadham (சாதம்)",
+          "Rasam (ரசம்)",
+          "Butter Milk (மோர்)",
+          "Curd Rice (தயிர் சாதம்)",
+      ],
+      sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
+      dessert: [
+          "Bread Halwa Or Jam (பிரட் ஹல்வா Or ஜாம்)",
+          "Mixed Fruits and Nuts Jam (பழ ஜாம்)",
+          "Rasamalai (ரசமலாய்)",
+          "Phirni Payasam (பிர்னி பாயாசம்)",
+          "Kauni Rice Payasam (கோவ்னி அரிசி பாயசம்)",
+          "Wheat Samba Payasam (சம்பா கோதுமை பாயசம்)",
+          "Javvarisi Payasam (ஜவ்வரிசி பாயாசம்)",
+      ],
+  },
+
+  meals: {
+      name: "Meals Pack",
+      starters: [
+          "Chicken 65 (50gm)",
+          "Chicken Gravy (60gm)",
+          "Chicken Chettinad Gravy (60gm)",
+          "Pallipalayam Chicken (60gm)",
+          "Nattu Kozhi Peratal (60gm)",
+          "Viral Fish Fry (1 No.)",
+          "Vanjaram Fish Fry (1 No.)",
+          "Kendai Meen Fry (1 No.)",
+          "Prawn Thokku (30gm)",
+          "Mutton Sukka (50gm)",
+          "Kadai 65 1/2",
+      ],
+      main: [
+          "Mutton Kuzhambu (70 gm)",
+          "Viral Fish Curry (1 pc)",
+          "Vanjaram Fish Curry (1 pc)",
+          "Kendai Fish Curry (1 pc)",
+          "Country Chicken Curry (70 gm)",
+          "Prawn Gravy (30 gm)",
+          "Kadai Gravy (1/2)",
+          "Boiled Egg (1 No.)",
+          "Egg Masala (1 No.)",
+          "Karandi Omelette",
+          "Sadham (சாதம்)",
+          "Rasam (ரசம்)",
+          "Butter Milk (மோர்)",
+      ],
+      sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
+      dessert: [
+          "Phirni Payasam (பிர்னி பாயாசம்)",
+          "Kauni Rice Payasam (கோவ்னி அரிசி பாயசம்)",
+          "Wheat Samba Payasam (சம்பா கோதுமை பாயசம்)",
+          "Javvarisi Payasam (ஜவ்வரிசி பாயாசம்)",
+      ],
+  },
+
+  dinner: {
+      name: "Dinner Pack",
+      starters: [
+          "Country Chicken Curry (70gm)",
+          "Prawn Gravy (30gm)",
+          "Kadai Gravy (1/2)",
+          "Boiled Egg (1 No.)",
+          "Egg Masala (1 No.)",
+          "Karandi Omelette",
+          "Chicken 65 (50gm)",
+          "Chicken Gravy (60gm)",
+          "Chicken Chettinad Gravy (60gm)",
+          "Pallipalayam Chicken (60gm)",
+          "Nattu Kozhi Peratal (60gm)",
+          "Viral Fish Fry (1 No.)",
+          "Vanjaram Fish Fry (1 No.)",
+          "Kendai Meen Fry (1 No.)",
+          "Prawn Thokku (30gm)",
+          "Mutton Sukka (50gm)",
+          "Kadai 65 1/2",
+      ],
+      main: [
+          "Idli",
+          "Chapathi",
+          "Chilli Parotta",
+          "Romaniya Rotti",
+          "Butter Naan",
+          "Chicken Kothu Parotta",
+          "Mutton Kothu Parotta",
+          "Prawn Kothu Parotta",
+          "Mix Kothu Parotta",
+          "Egg Kothu Parotta",
+          "Chicken Dosa",
+          "Mutton Dosa",
+          "Podi Uthappam",
+          "Onion Uthappam",
+          "Chicken Fried Rice",
+          "Mutton Fried Rice",
+          "Prawn Fried Rice",
+          "Egg Fried Rice",
+          "Chicken Noodles",
+          "Mutton Noodles",
+          "Prawn Noodles",
+          "Egg Noodles",
+          "Sadham (சாதம்)",
+          "Rasam (ரசம்)",
+          "Butter Milk (மோர்)",
+      ],
+      sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
+      dessert: [
+          "Bread Halwa (பிரட் ஹல்வா)",
+          "Kesari",
+          "Fruit Kesari",
+          "Ashoka",
+          "Rasamalai (ரசமலாய்)",
+          "பாதாம் பால்",
+          "கற்கண்டு பால்",
+      ],
+  },
+
   pack1: {
     name: "Pack 1",
-    dessert: ["Bread Halwa (பிரட் ஹல்வா)"],
+    starters: [
+        // Moved from 'main':
+        "Chicken 65 / Chicken Gravy (60gm)", 
+    ],
     main: [
-      "Chicken Biriyani (சிக்கன் பிரியாணி) (2pc Chicken 50gm)",
-      "Boiled Egg (1 No.)",
-      "Chicken 65 / Chicken Gravy (60gm)",
-      "Thaalcha (தால்ச்சா)",
-      "Curd Rice (தயிர் சாதம்)",
+        "Chicken Biriyani (சிக்கன் பிரியாணி) (2pc Chicken 50gm)",
+        "Boiled Egg (1 No.)",
+        "Thaalcha (தால்ச்சா)",
+        "Curd Rice (தயிர் சாதம்)",
     ],
     sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
-    starters: [],
-  },
-  pack2: {
+    dessert: ["Bread Halwa (பிரட் ஹல்வா)"],
+},
+
+pack2: {
     name: "Pack 2",
-    dessert: ["Bread Halwa (பிரட் ஹல்வா)"],
+    starters: [
+        // Moved from 'main':
+        "Chicken 65 / Chicken Gravy (60gm)", 
+    ],
     main: [
-      "Mutton Biriyani (மட்டன் பிரியாணி) 100 gm mutton",
-      "Egg Masala (முட்டை மசாலா) - 1 No.",
-      "Chicken 65 / Chicken Gravy (60gm)",
-      "Thaalcha (தால்ச்சா)",
-      "Curd Rice (தயிர் சாதம்)",
+        "Mutton Biriyani (மட்டன் பிரியாணி) 100 gm mutton",
+        "Egg Masala (முட்டை மசாலா) - 1 No.",
+        "Thaalcha (தால்ச்சா)",
+        "Curd Rice (தயிர் சாதம்)",
     ],
     sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
-    starters: [],
-  },
-  pack3: {
+    dessert: ["Bread Halwa (பிரட் ஹல்வா)"],
+},
+
+pack3: {
     name: "Pack 3",
+    starters: [
+        // Moved from 'main':
+        "Mutton Soup (மட்டன் சூப்)",
+        "Chicken 65 / Chicken Gravy (60gm)",
+    ],
+    main: [
+        "Mutton Biriyani (100 gm mutton)",
+        "Egg Masala (1 No.)",
+        "Thaalcha (தால்ச்சா)",
+        "Curd Rice (தயிர் சாதம்)",
+    ],
+    sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
     dessert: ["Bread Halwa (பிரட் ஹல்வா)"],
-    main: [
-      "Mutton Biriyani (100 gm mutton)",
-      "Egg Masala (1 No.)",
-      "Chicken 65 / Chicken Gravy (60gm)",
-      "Mutton Soup (மட்டன் சூப்)",
-      "Thaalcha (தால்ச்சா)",
-      "Curd Rice (தயிர் சாதம்)",
-    ],
-    sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
-    starters: [],
-  },
-  pack4: {
+},
+
+pack4: {
     name: "Pack 4",
-    dessert: [
-      "Bread Halwa Or Jam (பிரட் ஹல்வா Or ஜாம்)",
-      "Mixed Fruits and Nuts Jam (பழ ஜாம்)",
-      "Phirni Payasam (பிர்னி பாயாசம்)",
+    starters: [
+        // Moved from 'main':
+        "Mutton Soup (மட்டன் சூப்)",
+        "Chicken 65 / Chicken Gravy (60gm)",
+        "Viral Fish Fry (1 No.)",
     ],
     main: [
-      "Mutton Soup (மட்டன் சூப்)",
-      "Mutton Biriyani (100 gm mutton)",
-      "Egg Masala (1 No.)",
-      "Chicken 65 / Chicken Gravy (60gm)",
-      "Viral Fish Fry (1 No.)",
-      "Thaalcha (தால்ச்சா)",
-      "Curd Rice (தயிர் சாதம்)",
+        "Mutton Biriyani (100 gm mutton)",
+        "Egg Masala (1 No.)",
+        "Thaalcha (தால்ச்சா)",
+        "Curd Rice (தயிர் சாதம்)",
     ],
     sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
-    starters: [],
-  },
-  pack5: {
-    name: "Pack 5",
     dessert: [
+        "Bread Halwa Or Jam (பிரட் ஹல்வா Or ஜாம்)",
+        "Mixed Fruits and Nuts Jam (பழ ஜாம்)",
+        "Phirni Payasam (பிர்னி பாயாசம்)",
+    ],
+},
+
+pack5: {
+    name: "Pack 5",
+    starters: [
+        // Moved from 'main':
+        "Mutton Soup (மட்டன் சூப்)",
+        "Chicken 65 / Chicken Gravy (60gm)",
+        "Viral Fish Fry (1 No.)",
+        "Prawn Thokku (இறால் தோக்கு) 30gm",
+        "Mutton Sukka (மட்டன் சுக்கா) 50gm",
+    ],
+    main: [
+        "Mutton Biriyani (100 gm mutton)",
+        "Egg Masala (1 No.)",
+        "Sadham (சாதம்)", // Rice items are generally 'main'
+        "Rasam (ரசம்)",   // Rasam and Buttermilk are common post-meal/main additions
+        "Butter Milk (மோர்)",
+    ],
+    sides: ["Oorukai (ஊறுகாய்)", "Onion Pacchadi (வெங்காய பச்சடி)"],
+    dessert: [
+        "Bread Halwa Or Jam (பிரட் ஹல்வா Or ஜாம்)",
+        "Mixed Fruits and Nuts Jam (பழ ஜாம்)",
+        "Rasamalai (ரசமலாய்)",
+        "Phirni Payasam (பிர்னி பாயாசம்)",
+    ],
+},
+};
+
+const allCategories = {
+  starters: [
+      "Chicken 65 (50gm)",
+      "Chicken Gravy (60gm)",
+      "Chicken Chettinad Gravy (60gm)",
+      "Pallipalayam Chicken (60gm)",
+      "Nattu Kozhi Peratal (60gm)",
+      "Viral Fish Fry (1 No.)",
+      "Vanjaram Fish Fry (1 No.)",
+      "Kendai Meen Fry (1 No.)",
+      "Prawn Thokku (30gm)",
+      "Mutton Sukka (50gm)",
+      "Kadai 65 1/2",
+      "Country Chicken Curry (70gm)", // Found in 'dinner' starters (though often a main)
+      "Prawn Gravy (30gm)",          // Found in 'dinner' starters (though often a main)
+      "Kadai Gravy (1/2)",           // Found in 'dinner' starters (though often a main)
+      "Boiled Egg (1 No.)",          // Found in 'dinner' starters (though often a main)
+      "Egg Masala (1 No.)",          // Found in 'dinner' starters (though often a main)
+      "Karandi Omelette",             // Found in 'dinner' starters (though often a main)
+  ],
+  main: [
+      "Mutton Soup (மட்டன் சூப்)",
+      "Mutton Biriyani (100 gm mutton)",
+      "Chicken Biriyani (2pc Chicken 50gm)",
+      "Sadham (சாதம்)",
+      "Rasam (ரசம்)",
+      "Butter Milk (மோர்)",
+      "Curd Rice (தயிர் சாதம்)",
+      "Mutton Kuzhambu (70 gm)",
+      "Viral Fish Curry (1 pc)",
+      "Vanjaram Fish Curry (1 pc)",
+      "Kendai Fish Curry (1 pc)",
+      "Country Chicken Curry (70 gm)",
+      "Prawn Gravy (30 gm)",
+      "Kadai Gravy (1/2)",
+      "Idli",
+      "Chapathi",
+      "Chilli Parotta",
+      "Romaniya Rotti",
+      "Butter Naan",
+      "Chicken Kothu Parotta",
+      "Mutton Kothu Parotta",
+      "Prawn Kothu Parotta",
+      "Mix Kothu Parotta",
+      "Egg Kothu Parotta",
+      "Chicken Dosa",
+      "Mutton Dosa",
+      "Podi Uthappam",
+      "Onion Uthappam",
+      "Chicken Fried Rice",
+      "Mutton Fried Rice",
+      "Prawn Fried Rice",
+      "Egg Fried Rice",
+      "Chicken Noodles",
+      "Mutton Noodles",
+      "Prawn Noodles",
+      "Egg Noodles",
+      "Thaalcha (தால்ச்சா)",
+  ],
+  dessert: [
       "Bread Halwa Or Jam (பிரட் ஹல்வா Or ஜாம்)",
       "Mixed Fruits and Nuts Jam (பழ ஜாம்)",
       "Rasamalai (ரசமலாய்)",
       "Phirni Payasam (பிர்னி பாயாசம்)",
-    ],
-    main: [
-      "Mutton Soup (மட்டன் சூப்)",
-      "Mutton Biriyani (100 gm mutton)",
-      "Egg Masala (1 No.)",
-      "Chicken 65 / Chicken Gravy (60gm)",
-      "Viral Fish Fry (1 No.)",
-      "Prawn Thokku (இறால் தோக்கு) 30gm",
-      "Mutton Sukka (மட்டன் சுக்கா) 50gm",
-      "Sadham (சாதம்)",
-      "Rasam (ரசம்)",
-      "Butter Milk (மோர்)",
-    ],
-    sides: ["Oorukai (ஊறுகாய்)"],
-    starters: [],
-  },
+      "Kauni Rice Payasam (கோவ்னி அரிசி பாயசம்)",
+      "Wheat Samba Payasam (சம்பா கோதுமை பாயசம்)",
+      "Javvarisi Payasam (ஜவ்வரிசி பாயாசம்)",
+      "Bread Halwa (பிரட் ஹல்வா)", // Unique version of Bread Halwa
+      "Kesari",
+      "Fruit Kesari",
+      "Ashoka",
+      "பாதாம் பால்",
+      "கற்கண்டு பால்",
+  ],
+  sides: [
+      "Oorukai (ஊறுகாய்)",
+      "Onion Pacchadi (வெங்காய பச்சடி)",
+  ]
 };
 
 export default function CateringQuotation() {
@@ -96,14 +331,12 @@ export default function CateringQuotation() {
     guests: "",
     selectedPack: "",
     customDishes: [],
-    manualDishes: [],
   });
 
-  const [manualDish, setManualDish] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  // Collect all dishes across packs for custom pack (no duplicates)
+  // Collect all dishes across packs for Custom pack (no duplicates)
   const allCategories = { Starters: [], Main: [], Sides: [], Dessert: [] };
   Object.values(packs).forEach((pack) => {
     Object.keys(pack).forEach((cat) => {
@@ -131,114 +364,53 @@ export default function CateringQuotation() {
     });
   };
 
-  const addManualDish = () => {
-    if (manualDish.trim() && !formData.manualDishes.includes(manualDish)) {
-      setFormData((prev) => ({
-        ...prev,
-        manualDishes: [...prev.manualDishes, manualDish],
-      }));
-      setManualDish("");
-    }
-  };
-
-  const removeManualDish = (dish) => {
-    setFormData((prev) => ({
-      ...prev,
-      manualDishes: prev.manualDishes.filter((d) => d !== dish),
-    }));
-  };
-
-//   const handleSubmit = async () => {
-//     const selectedPackData =
-//       formData.selectedPack === "Custom"
-//         ? {
-//             customDishes: formData.customDishes,
-//             manualDishes: formData.manualDishes,
-//           }
-//         : packs[formData.selectedPack];
-  
-//     const finalData = { ...formData, selectedPackData };
-  
-//     try {
-//       // 1️⃣ Send data to Google Sheet (replace YOUR_API_ENDPOINT with your Sheet API URL)
-//       await fetch("YOUR_GOOGLE_SHEET_API_ENDPOINT", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(finalData),
-//       });
-  
-//       // 2️⃣ Send WhatsApp notification to restaurant owner
-//       await fetch("YOUR_BACKEND_API_SEND_WHATSAPP", {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify({
-//           to: "whatsapp:+91 6383892024", // restaurant owner number
-//           message: `New Catering Quotation Request:\nName: ${finalData.name}\nMobile: ${finalData.mobile}\nEvent Date: ${finalData.eventDate}\nGuests: ${finalData.guests}\nSelected Pack: ${formData.selectedPack}`,
-//         }),
-//       });
-  
-//       alert("Quotation submitted successfully!");
-//     } catch (error) {
-//       console.error(error);
-//       alert("Failed to submit quotation. Please try again.");
-//     }
-//   };
-  
-// Example in a React component
-const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setIsSubmitted(false);
-  
-    const selectedPackData =
-      formData.selectedPack === "Custom"
-        ? { customDishes: formData.customDishes, manualDishes: formData.manualDishes }
-        : packs[formData.selectedPack];
-  
-    const finalData = { ...formData, selectedPackData };
-  
+
     try {
-      // 1️⃣ Send to backend proxy to avoid CORS
+      // Send to backend
       const res = await fetch("/api/submitQuotation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(finalData),
+        body: JSON.stringify(formData),
       });
 
       const result = await res.json();
-      console.log(result, "rrrrrr")
+      console.log(result, "response");
+
       if (res.ok && result.status === "success") {
         setIsSubmitted(true);
       } else {
         alert("Submission failed. Please try again.");
       }
-  
-      // 2️⃣ Open WhatsApp
-      const ownerNumber = "916383892024"; // restaurant owner number without +
+
+      // WhatsApp message
+      const ownerNumber = "916383892024"; // ✅ only digits, no +
       const message = encodeURIComponent(
         `Hello, I'd like a catering quote.
-  Name: ${finalData.name}
-  Mobile: ${finalData.mobile}
-  Event Date: ${finalData.eventDate}
-  Event Type: ${finalData.eventType}
-  Guests: ${finalData.guests}
-  Selected Pack: ${formData.selectedPack}`
+        Name: ${formData.name}
+        Mobile: ${formData.mobile}
+        Event Date: ${formData.eventDate}
+        Event Type: ${formData.eventType}
+        Guests: ${formData.guests}
+        Selected Pack: ${formData.selectedPack}`
       );
-  
+
       window.open(`https://wa.me/${ownerNumber}?text=${message}`, "_blank");
     } catch (error) {
+      console.error(error);
       alert("Failed to submit quotation. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
-  
 
   return (
     <div className="catering-section">
       <h1 className="catering-title">Request Catering Quotation</h1>
 
-      {/* User Info */}
       <div className="catering-form">
         <label>Full Name</label>
         <input
@@ -317,7 +489,7 @@ const handleSubmit = async (e) => {
               <details key={idx}>
                 <summary>{cat}</summary>
                 {allCategories[cat].map((dish, i) => (
-                  <label key={i} className="checkbox-label">
+                  <label  key={i} className="checkbox-label">
                     <input
                       type="checkbox"
                       checked={formData.customDishes.includes(dish)}
@@ -328,28 +500,6 @@ const handleSubmit = async (e) => {
                 ))}
               </details>
             ))}
-
-            <div className="manual-add">
-              <input
-                type="text"
-                placeholder="Add custom dish"
-                value={manualDish}
-                onChange={(e) => setManualDish(e.target.value)}
-              />
-              <button type="button" onClick={addManualDish}>
-                Add
-              </button>
-            </div>
-            <ul>
-              {formData.manualDishes.map((dish, i) => (
-                <li key={i}>
-                  {dish}
-                  <button type="button" onClick={() => removeManualDish(dish)}>
-                    ❌
-                  </button>
-                </li>
-              ))}
-            </ul>
           </div>
         )}
 
@@ -367,7 +517,6 @@ const handleSubmit = async (e) => {
                   guests: "",
                   selectedPack: "",
                   customDishes: [],
-                  manualDishes: [],
                 });
                 setIsSubmitted(false);
               }}
