@@ -194,18 +194,18 @@ const handleSubmit = async (e) => {
     const finalData = { ...formData, selectedPackData };
   
     try {
-      // 1️⃣ Send to Google Sheets
-      const res = await fetch("https://script.google.com/macros/s/AKfycbwxvGh8vK9u_oUCbrFhUOJECvhkgRxMZOyefn4zm_YG/dev", {
+      // 1️⃣ Send to backend proxy to avoid CORS
+      const res = await fetch("/api/submitQuotation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(finalData),
       });
-  
+
       const result = await res.json();
-      if (result.status === "success") {
+      if (res.ok && result.status === "success") {
         alert("Quotation submitted to Google Sheets!");
       } else {
-        alert("Google Sheets submission failed.");
+        alert("Submission failed. Please try again.");
       }
   
       // 2️⃣ Open WhatsApp
@@ -221,9 +221,8 @@ const handleSubmit = async (e) => {
       );
   
       window.open(`https://wa.me/${ownerNumber}?text=${message}`, "_blank");
-    } catch (err) {
-      console.error("Error submitting quotation:", err);
-      alert("Failed to submit. Check console.");
+    } catch (error) {
+      alert("Failed to submit quotation. Please try again.");
     }
   };
   
