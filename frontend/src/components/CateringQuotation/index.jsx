@@ -100,6 +100,8 @@ export default function CateringQuotation() {
   });
 
   const [manualDish, setManualDish] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Collect all dishes across packs for custom pack (no duplicates)
   const allCategories = { Starters: [], Main: [], Sides: [], Dessert: [] };
@@ -185,6 +187,8 @@ export default function CateringQuotation() {
 // Example in a React component
 const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setIsSubmitted(false);
   
     const selectedPackData =
       formData.selectedPack === "Custom"
@@ -203,7 +207,7 @@ const handleSubmit = async (e) => {
 
       const result = await res.json();
       if (res.ok && result.status === "success") {
-        alert("Quotation submitted to Google Sheets!");
+        setIsSubmitted(true);
       } else {
         alert("Submission failed. Please try again.");
       }
@@ -223,6 +227,8 @@ const handleSubmit = async (e) => {
       window.open(`https://wa.me/${ownerNumber}?text=${message}`, "_blank");
     } catch (error) {
       alert("Failed to submit quotation. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
   
@@ -346,8 +352,32 @@ const handleSubmit = async (e) => {
           </div>
         )}
 
-        <button className="submit-btn" onClick={handleSubmit}>
-          Submit Quotation
+        {isSubmitted && (
+          <div className="submission-success" style={{ marginTop: 16 }}>
+            <p>Thank you! Your quotation was submitted successfully.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setFormData({
+                  name: "",
+                  mobile: "",
+                  eventDate: "",
+                  eventType: "",
+                  guests: "",
+                  selectedPack: "",
+                  customDishes: [],
+                  manualDishes: [],
+                });
+                setIsSubmitted(false);
+              }}
+            >
+              Get another quotation
+            </button>
+          </div>
+        )}
+
+        <button className="submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit Quotation"}
         </button>
       </div>
     </div>
