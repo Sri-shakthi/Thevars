@@ -23,7 +23,9 @@ function App() {
       <section id="reviews">
         <ReviewsStories />
       </section>
+      <section id="footer">
       <FooterPage />
+      </section>
     </div>
   );
 }
