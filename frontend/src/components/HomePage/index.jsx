@@ -1,28 +1,67 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import logo from "../../assets/lo.png";
 import "./index.css";
-import hooImage from "../../assets/hoo.png";
-import shomeImage from "../../assets/shome.png";
 
-export default function HomePage() {
-  return (
-    <div 
-      className="homepage"
-      style={{
-        '--desktop-bg': `url(${hooImage})`,
-        '--mobile-bg': `url(${shomeImage})`
-      }}
-    >
-      <div className="navbar">
-        <p>About Us</p>
-        <p>Our Menu</p>
-        <p>Catering Service</p>
-        <p>Contact Us</p>
-      </div>
+// A simple Logo component (replace with your actual Logo if needed)
+const Logo = () => (
+  <div className="logo-placeholder">
+    <img src={logo} alt="New Thevars Hotel" className="logo-image" />
+  </div>
+);
 
-      <div className="hero-button">
-        <button className="home-btn">Contact Us</button>
-      </div>
-    </div>
-  );
-}
+// Menu items as a separate component for cleaner rendering
+const NavMenu = ({ isMobile }) => (
+    <ul className={isMobile ? "mobile-menu" : ""}>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#footer">Contact</a></li>
+    </ul>
+);
+
+const HomePage = () => {
+    // State to manage the visibility of the mobile menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    // Function to toggle the menu state
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    return (
+        <div className="homepage">
+            {/* Header / Navbar */}
+            <header className="header">
+                <Logo />
+                
+                {/* Desktop Menu - Visible on large screens */}
+                <nav className="desktop-navbar">
+                    <NavMenu isMobile={false} />
+                </nav>
+
+                {/* Hamburger Icon - Visible on small screens (max-width: 768px) */}
+                <div className="hamburger" onClick={toggleMenu}>
+                    {/* Simple hamburger icon using Unicode character (☰) */}
+                    <span>{isMenuOpen ? '✕' : '☰'}</span> 
+                </div>
+
+                {/* Mobile Menu - Only appears when isMenuOpen is true */}
+                {isMenuOpen && (
+                    <nav className="mobile-navbar">
+                        <NavMenu isMobile={true} />
+                    </nav>
+                )}
+            </header>
+
+            {/* Hero Section */}
+            <div className="hero">
+            <a href="#catering">
+                <button className="book-btn">Book Us</button>
+            </a>     
+        </div>
+        </div>
+    );
+};
+
+export default HomePage;

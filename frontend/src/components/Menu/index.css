@@ -16,6 +16,7 @@
 .menu-tabs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 3rem;
 }
@@ -119,7 +120,7 @@
 
 @media (max-width: 480px) {
   .menu-card img { object-fit: cover; }
-  .menu-tabs { flex-direction: column; gap: 0.8rem; }
+  .menu-tabs { gap: 0.8rem; }
 }
   .menu-wrapper {
   text-align: center;
@@ -153,6 +154,7 @@
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: 134px;
 }
 
 .menu-tabs button.active,
@@ -242,5 +244,5 @@
 
 @media (max-width: 480px) {
   .menu-card img { object-fit: cover; }
-  .menu-tabs { flex-direction: column; gap: 0.8rem; }
+  .menu-tabs { flex-direction: row; gap: 0.8rem; }
 }

@@ -11,7 +11,7 @@
   
   .title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
     border-bottom: 2px solid #ffd700;
     padding-bottom: 0.5rem;
@@ -108,7 +108,7 @@
 
 /* CateringQuotation.css */
 .catering-section {
-  background: linear-gradient(235deg, #8b000029, #b22222, #a192d9);
+  background: linear-gradient(235deg, #83008bad, #b22222, #a192d9); 
     min-height: 100vh;
     padding: 2rem;
   display: flex;
@@ -117,7 +117,7 @@
 }
 
 .catering-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   font-weight: bold;
   color: gold;
     margin-bottom: 1.5rem;
@@ -215,5 +215,14 @@
 .submit-btn:hover {
   background: #ffd700;
     transform: scale(1.05);
-  }
+}
   
+.select-input{
+  height: 40px;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid gold;
+  outline: none;
+  background: #fff;
+  color: #000;
+}

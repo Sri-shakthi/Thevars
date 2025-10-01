@@ -3,49 +3,66 @@
   width: 100%;
   background: #8b0000; /* Deep red background */
   color: #f5deb3; /* Golden wheat text */
+  padding: 10px 20px;
+  box-sizing: border-box;
 }
 
-  /* Flex container - always split 50/50 */
+/* Flex container - split 50/50 on larger screens */
 .about-container {
   display: flex;
-  width: 100%;
-  align-items: stretch;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .about-container.reverse {
   flex-direction: row-reverse;
 }
 
-  /* Image styling - force 50% */
-
-.about-image img {
-  width: 540px;
-  display: block;
-  border-radius: 20px;
-  margin: 20px;
+/* Image styling */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-  /* Text styling - force 50% */
+.about-image img {
+  width: 100%;
+  max-width: 540px; /* cap size */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Text styling */
 .about-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center;
-  margin: 20px;
-
-
+  text-align: left;
+  padding: 20px;
 }
 
 .about-text h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 15px;
   color: gold;
 }
 
+.about-text-head{
+  font-size: 3rem;
+  color: gold;
+text-align: center;
+}
+
 .about-text p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  text-align: center;
+  margin-bottom: 15px;
 }
 
 /* Fade-in animation */
@@ -63,22 +80,44 @@
 }
 
 /* Responsive design */
+@media (max-width: 1024px) {
+  .about-text h2 {
+    font-size: 1.8rem;
+  }
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .about-container,
   .about-container.reverse {
     flex-direction: column;
-    min-height: auto;
+    text-align: center;
   }
 
-    .about-image,
   .about-text {
-      width: 100%;
-      height: auto;
+    padding: 15px;
+    text-align: center;
   }
-  
-  .about-text {
-      padding: 20px;
-      text-align: center;
+
+  .about-image img {
+    max-width: 90%;
+    margin: 0 auto;
   }
 }
-  
+
+@media (max-width: 480px) {
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  .about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+}

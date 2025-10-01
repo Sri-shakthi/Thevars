@@ -450,6 +450,7 @@ export default function CateringQuotation() {
         {/* Pack Selection */}
         <label>Select Package</label>
         <select
+          className="select-input"
           value={formData.selectedPack}
           onChange={(e) => setFormData({ ...formData, selectedPack: e.target.value })}
         >

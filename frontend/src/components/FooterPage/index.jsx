@@ -33,7 +33,7 @@ const FooterPage = () => {
             <li><a href="#home">Home</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#catering">Catering Services</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -43,14 +43,14 @@ const FooterPage = () => {
           <h2>Contact Us</h2>
           <p>📍 2908, Srinivasam Pillai Rd, near railway station, Graham Nagar, Shivaji Nagar, Thanjavur, Tamil Nadu 613001</p>
           <p>📞 <a href="tel:+918148862142">+91 8148862142</a></p>
-          <p>✉️ <a href="mailto:info@hotelthevar.com">info@hotelthevar.com</a></p>
+          <p>✉️ <a href="mailto:hotelnewthevarsthanjavur@gmail.com">hotelnewthevarsthanjavur@gmail.com</a></p>
         </div>
 
         {/* Opening Hours */}
         <div className="footer-hours">
           <h2>Opening Hours</h2>
           <p>Mon – Sun</p>
-          <p>11:00 AM – 11:00 PM</p>
+          <p>8:00 AM – 11:00 PM</p>
         </div>
       </div>
 
@@ -59,8 +59,6 @@ const FooterPage = () => {
         <div className="footer-social">
           <a href="https://www.instagram.com/newthevars/"><FaInstagram /></a>
           <a href="https://www.facebook.com/hotelnewthevars"><FaFacebook /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaYoutube /></a>
         </div>
 
         
