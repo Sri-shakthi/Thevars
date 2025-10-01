@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import "./index.css";
 
 
-
 const packs = {
   briyaniPack: {
       name: "Briyani Pack",
@@ -367,18 +366,22 @@ export default function CateringQuotation() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setIsSubmitted(false);
 
     try {
-      // Send to backend
+      // ---- SEND TO BACKEND / GOOGLE FORM ----
+      const payload = {
+        ...formData,
+        customDishes: formData.customDishes.join(", "),
+      };
+
       const res = await fetch("/api/submitQuotation", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const result = await res.json();
-      console.log(result, "response");
+      console.log("Form response:", result);
 
       if (res.ok && result.status === "success") {
         setIsSubmitted(true);
@@ -386,26 +389,75 @@ export default function CateringQuotation() {
         alert("Submission failed. Please try again.");
       }
 
-      // WhatsApp message
-      const ownerNumber = "916383892024"; // ✅ only digits, no +
-      const message = encodeURIComponent(
-        `Hello, I'd like a catering quote.
-        Name: ${formData.name}
-        Mobile: ${formData.mobile}
-        Event Date: ${formData.eventDate}
-        Event Type: ${formData.eventType}
-        Guests: ${formData.guests}
-        Selected Pack: ${formData.selectedPack}`
+      // ---- SEND TO WHATSAPP ----
+        const ownerNumber = "918148862142"; // ✅ only digits, no +
+        const message = encodeURIComponent(
+        `Hello, I'd like a catering quote.\n\n` +
+          `Name: ${formData.name}\n` +
+          `Mobile: ${formData.mobile}\n` +
+          `Event Date: ${formData.eventDate}\n` +
+          `Event Type: ${formData.eventType}\n` +
+          `Guests: ${formData.guests}\n` +
+          `Selected Pack: ${formData.selectedPack}\n` +
+          (formData.customDishes.length > 0
+            ? `Custom Dishes: ${formData.customDishes.join(", ")}`
+            : "")
       );
 
-      window.open(`https://wa.me/${ownerNumber}?text=${message}`, "_blank");
+      // More reliable than window.open
+      window.location.href = `https://wa.me/${ownerNumber}?text=${message}`;
     } catch (error) {
-      console.error(error);
+      console.error("Submit error:", error);
       alert("Failed to submit quotation. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setIsSubmitted(false);
+
+  //   try {
+  //     // Send to backend
+  //     const res = await fetch("/api/submitQuotation", {
+  //       method: "POST",
+  //       headers: { "Content-Type": "application/json" },
+  //       body: JSON.stringify(formData),
+  //     });
+
+  //     const result = await res.json();
+  //     console.log(result, "response");
+
+  //     if (res.ok && result.status === "success") {
+  //       setIsSubmitted(true);
+  //     } else {
+  //       alert("Submission failed. Please try again.");
+  //     }
+
+  //     // WhatsApp message
+  //     const ownerNumber = "918148862142"; // ✅ only digits, no +
+  //     const message = encodeURIComponent(
+  //       `Hello, I'd like a catering quote.\n\n` +
+  //         `Name: ${formData.name}\n` +
+  //         `Mobile: ${formData.mobile}\n` +
+  //         `Event Date: ${formData.eventDate}\n` +
+  //         `Event Type: ${formData.eventType}\n` +
+  //         `Guests: ${formData.guests}\n` +
+  //         `Selected Pack: ${formData.selectedPack}\n` +
+  //         (formData.customDishes.length > 0
+  //           ? `Custom Dishes: ${formData.customDishes.join(", ")}`
+  //           : "")
+  //     );
+  //     window.location.href = `https://wa.me/${ownerNumber}?text=${message}`;
+  //   } catch (error) {
+  //     console.error(error);
+  //     alert("Failed to submit quotation. Please try again.");
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   return (
     <div className="catering-section">
@@ -509,6 +561,7 @@ export default function CateringQuotation() {
             <p>Thank you! Your quotation was submitted successfully.</p>
             <button
               type="button"
+              className="submit-btn"
               onClick={() => {
                 setFormData({
                   name: "",

@@ -1,6 +1,6 @@
 .reviews-stories-section {
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0px;
   padding: 4rem 2rem;
   background: linear-gradient(145deg, #c8a4ef, #F44336);
   color: #fff;
@@ -23,7 +23,7 @@
 
 .story {
   flex: 1 1 300px; /* responsive width */
-  max-width: 500px;
+  max-width: 580px;
   aspect-ratio: 9 / 16; /* maintain Instagram video ratio */
   border-radius: 16px;
   overflow: hidden;
@@ -61,7 +61,7 @@
 /* Mobile */
 @media (max-width: 768px) {
   .reviews-stories-section {
-    padding: 2rem 1rem;
+    padding: 0rem 1rem;
   }
 
   .reviews-stories-section h2 {
