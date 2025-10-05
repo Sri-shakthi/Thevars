@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import logo from "../../assets/lo.png";
 import "./index.css";
 
 // A simple Logo component (replace with your actual Logo if needed)
 const Logo = () => (
   <div className="logo-placeholder">
-    <img src={logo} alt="New Thevars Hotel" className="logo-image" />
+    <img src="https://ik.imagekit.io/qbnsahjpu/assets/lo.png?updatedAt=1759688728186" loading="lazy" alt="New Thevars Hotel" className="logo-image" />
   </div>
 );
 
@@ -30,7 +29,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="homepage">
+        <div className="homepage" loading="lazy">
             {/* Header / Navbar */}
             <header className="header">
                 <Logo />

@@ -1,228 +1,236 @@
-.catering-wrapper {
-    max-width: 800px;
-    margin: auto;
-    background: #800000;
-    color: #ffd700;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .title {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 2px solid #ffd700;
-    padding-bottom: 0.5rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  .form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 0.3rem;
-  }
-  
-  .form-group input, 
-  .form-group select {
-    width: 100%;
-    padding: 0.6rem;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-  }
-  
-  .pack-display {
-    margin: 1rem 0;
-    background: rgba(255,215,0,0.1);
-    padding: 1rem;
-    border-radius: 12px;
-  }
-  
-  .pack-display h3 {
-    color: #ffd700;
-    margin-bottom: 0.3rem;
-  }
-  
-  .checkbox {
-    display: block;
-    margin: 0.3rem 0;
-  }
-  
-  .manual-add {
-    display: flex;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-  
-  .manual-add input {
-    flex: 1;
-  }
-  
-  .manual-add button {
-    background: #ffd700;
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    color: #800000;
-    font-weight: bold;
-  }
-  
-  .manual-add button:hover {
-    background: #ffea80;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    background: linear-gradient(90deg, #ffd700, #ffa500);
-    color: #800000;
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  .submit-btn:hover {
-    transform: scale(1.05);
-  }
-  
-  @media (max-width: 600px) {
-    .catering-wrapper {
-      padding: 1rem;
-    }
-    .title {
-      font-size: 1.5rem;
-    }
-  }
-  
-
 /* CateringQuotation.css */
+
+/* Whole page background */
 .catering-section {
-  background: linear-gradient(235deg, #83008bad, #b22222, #a192d9); 
-    min-height: 100vh;
-    padding: 2rem;
+  background-color: #bc1823;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
 }
 
+/* Page title */
 .catering-title {
-    font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: gold;
-    margin-bottom: 1.5rem;
+  color: #ffffff;
+  margin-top: 2rem;
+  margin-bottom: 1.8rem;
   text-align: center;
+  border-bottom: 2px solid #ffd700;
+  padding-bottom: 0.5rem;
 }
 
+/* Form container */
 .catering-form {
-  background: #0000000a;
-    padding: 2rem;
-    border-radius: 20px;
+  background: #ffffff; /* lighter shade to contrast #bc1823 */
+  padding: 2rem;
+  border-radius: 20px;
   width: 95%;
-    max-width: 500px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-    gap: 1rem;
-  color: #fff;
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+  gap: 1rem;
+  color: #222;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
 }
 
+.catering-form:hover {
+  transform: scale(1.01);
+}
+
+/* Labels */
 .catering-form label {
   font-weight: 600;
-  color: gold;
+  color: #090909;
 }
 
-  .catering-form input {
-    padding: 0.6rem;
-    border-radius: 8px;
-  border: 2px solid gold;
+/* Input & Select Fields */
+.catering-form input,
+.select-input {
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 2px solid #bc1823;
   outline: none;
   background: #fff;
   color: #000;
+  margin-right: 10px;
+  font-size: 1rem;
 }
 
-  .accordion details {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid gold;
-    border-radius: 10px;
+.select-input {
+  height: 40px;
+}
+
+/* Accordion section (menu packs or custom dishes) */
+.accordion details {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid #bc1823;
+  border-radius: 10px;
   margin-bottom: 0.5rem;
   padding: 0.5rem;
 }
 
-  .accordion summary {
+.accordion summary {
   font-weight: bold;
-  color: gold;
+  color: #bc1823;
   cursor: pointer;
 }
 
+/* Checkbox label */
 .checkbox-label {
   display: block;
   margin-left: 1rem;
-  color: #fff;
+  color: #000;
+  font-weight: 500;
 }
 
-  .custom-dish-input {
+/* Custom dish input row */
+.custom-dish-input {
   display: flex;
   gap: 0.5rem;
 }
 
-  .custom-dish-input button {
-  background: gold;
-  border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
+.custom-dish-input input {
+  flex: 1;
 }
 
-  .custom-dish-list {
-    margin-top: 0.5rem;
+/* Add custom dish button */
+.custom-dish-input button {
+  background: #bc1823;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.custom-dish-input button:hover {
+  background: #a0101a;
+}
+
+/* Custom dish list */
+.custom-dish-list {
+  margin-top: 0.5rem;
   list-style: none;
   padding: 0;
 }
 
-  .custom-dish-list li {
+.custom-dish-list li {
   display: flex;
   justify-content: space-between;
-  background: rgba(255, 215, 0, 0.1);
-    padding: 0.4rem 0.6rem;
+  background: rgba(188, 24, 35, 0.1);
+  padding: 0.4rem 0.6rem;
   margin-bottom: 0.3rem;
-    border-radius: 8px;
-  color: #fff;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 500;
 }
 
+/* Submit Button */
 .submit-btn {
-  background: gold;
-  color: #8b0000;
+  background: linear-gradient(90deg, #ffd700, #ffae42);
+  color: #800000;
   font-weight: bold;
-    padding: 0.7rem;
-    border-radius: 10px;
+  padding: 0.9rem;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
-    transition: 0.3s ease;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {
-  background: #ffd700;
-    transform: scale(1.05);
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #ffe45c, #ffb347);
 }
-  
-.select-input{
-  height: 40px;
-  padding: 0.6rem;
-  border-radius: 8px;
-  border: 2px solid gold;
-  outline: none;
-  background: #fff;
+
+/* Secondary style for reset button on success screen */
+.submit-btn.secondary {
+  background: #ffffff;
+  color: #bc1823;
+  border: 2px solid #bc1823;
+}
+.submit-btn.secondary:hover {
+  background: #fff2f3;
+}
+
+/* Pack display (optional preview section) */
+.pack-display {
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.pack-display h3 {
+  color: #bc1823;
+  margin-bottom: 0.3rem;
+}
+
+/* Centered container used for loading and success states */
+.center-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  gap: 1rem;
+  text-align: center;
+}
+
+.center-text {
   color: #000;
+  font-weight: 600;
+}
+
+.success-text {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+/* Theme-matching spinner */
+.spinner {
+  width: 56px;
+  height: 56px;
+  border: 6px solid #ffd700; /* gold ring */
+  border-top-color: #bc1823; /* brand red */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+.submit-btn{
+  font-size: 0.8rem;
+}
+
+.submit-btn.secondary{
+  font-size: 0.8rem;
+}
+
+  .catering-section {
+    padding: 1rem;
+  }
+
+  .catering-form {
+    padding: 1.2rem;
+    margin-bottom: 4rem;
+  }
+
+  .catering-title {
+    font-size: 1.1rem;
+  }
 }

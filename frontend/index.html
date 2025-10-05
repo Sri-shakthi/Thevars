@@ -2,12 +2,87 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+
+    <!-- Favicons (place these files in /public) -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/logo.svg" /> -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- SEO Meta Tags -->
+    <title>New Thevars Hotel | Authentic South Indian Restaurant in Thanjavur</title>
+    <meta
+      name="description"
+      content="Established in 1965, New Thevars Hotel in Thanjavur is known for its legendary Seeraga Samba Biryani and authentic South Indian cuisine. Visit us to experience the legacy of traditional Tamil flavors."
+    />
+    <meta
+      name="keywords"
+      content="New Thevars Thanjavur, Seeraga Samba Biryani, South Indian Restaurant, Traditional Food, Thevars Hotel, Thanjavur Restaurant, Authentic Tamil Cuisine"
+    />
+    <meta name="author" content="New Thevars Hotel" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="New Thevars Hotel | Authentic South Indian Restaurant in Thanjavur" />
+    <meta property="og:description" content="Experience the authentic taste of South India at New Thevars Hotel, Thanjavur. Famous for Seeraga Samba Biryani since 1965." />
+    <meta property="og:image" content="https://newthevars.com/assets/your-main-image.jpg" />
+    <meta property="og:url" content="https://newthevars.com" />
+    <meta property="og:type" content="restaurant" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="New Thevars Hotel | Authentic South Indian Restaurant in Thanjavur" />
+    <meta name="twitter:description" content="Carrying forward the legacy of authentic South Indian flavors since 1965." />
+    <meta name="twitter:image" content="https://newthevars.com/assets/your-main-image.jpg" />
+
+    <!-- Local Business Schema (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "New Thevars Hotel",
+        "image": "https://newthevars.com/assets/your-main-image.jpg",
+        "@id": "https://newthevars.com",
+        "url": "https://newthevars.com",
+        "telephone": "+91-XXXXXXXXXX",
+        "priceRange": "₹₹",
+        "servesCuisine": ["South Indian", "Biryani", "Vegetarian", "Non-Vegetarian"],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kandiyur, Thanjavur",
+          "addressLocality": "Thanjavur",
+          "addressRegion": "Tamil Nadu",
+          "postalCode": "613501",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 10.7905,
+          "longitude": 79.1325
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+            ],
+            "opens": "07:00",
+            "closes": "22:00"
+          }
+        ],
+        "sameAs": [
+          "https://www.instagram.com/newthevarshotel",
+          "https://www.facebook.com/newthevarshotel"
+        ],
+        "description": "Established in 1965, New Thevars Hotel in Thanjavur is known for its legendary Seeraga Samba Biryani and authentic South Indian cuisine. Visit us to experience traditional Tamil flavors carried forward for generations."
+      }
+    </script>
   </head>
+
   <body>
     <div id="root"></div>
+
+    <!-- Your Vite entry — this must remain -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

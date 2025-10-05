@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/lo.png";
 import { FaInstagram, FaFacebook, FaTwitter, FaYoutube } from "react-icons/fa";
 import "./index.css";
 
@@ -22,8 +23,8 @@ const FooterPage = () => {
       <div className="footer-top">
         {/* Brand */}
         <div className="footer-brand">
-          <h1>Hotel New Thevars</h1>
-          <p>Authentic South Indian Cuisine Since 1965</p>
+        <img src={logo} loading="lazy" style={{ width: "220px" }} alt="Logo" />
+        <p>Authentic South Indian Cuisine Since 1965</p>
         </div>
 
         {/* Quick Links */}
@@ -60,12 +61,7 @@ const FooterPage = () => {
           <a href="https://www.instagram.com/newthevars/"><FaInstagram /></a>
           <a href="https://www.facebook.com/hotelnewthevars"><FaFacebook /></a>
         </div>
-
-        
       </div>
-
-      
-
       {/* Copyright */}
       <p className="footer-copy">
         © {new Date().getFullYear()} Hotel New Thevars. All Rights Reserved.

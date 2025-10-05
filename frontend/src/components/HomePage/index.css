@@ -11,7 +11,8 @@
 .homepage {
   height: 100vh;
   width: 100%;
-  background: url("../../assets/hoho.png") no-repeat center center/cover;
+  /* background: url("../../assets/hoho.png") no-repeat center center/cover; */
+  background: url("https://ik.imagekit.io/qbnsahjpu/assets/h1.png?updatedAt=1759689561755") no-repeat center center/cover;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -22,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(0 0 0 / 94%);
   padding: 0.8rem 5%;
   position: fixed;
   top: 0;
@@ -60,6 +61,7 @@
   margin-top: 20px;
   position: relative;
   top: 48%;
+  right: 3%;
 }
 
 /* Desktop Navbar (hidden by default - mobile first) */
@@ -100,13 +102,15 @@
 /* =============================== */
 /* Tablet Screens (min: 760px, max: 1024px) */
 /* =============================== */
-@media (min-width: 760px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
   .homepage {
-    background-image: url("../../assets/tabHoo.png");
+    /* background-image: url("../../assets/tabHoo.png"); */
+    background-image: url("https://ik.imagekit.io/qbnsahjpu/assets/h2.png?updatedAt=1759689207459");
   }
 
   .book-btn {
-    top: 31%;
+    top: 44%;
+    left: -1%;
   }
 
   .header {
@@ -169,11 +173,12 @@
 /* =============================== */
 @media (min-width: 333px) and (max-width: 550px) {
   .homepage {
-    background-image: url("../../assets/phoneHome.png");
+    /* background-image: url("../../assets/phoneHome.png"); */
+    background-image: url("https://ik.imagekit.io/qbnsahjpu/assets/h3.png?updatedAt=1759689180911");
   }
 
   .book-btn {
-    top: 40%;
+    top: 44%;
   }
 
   .logo-image {

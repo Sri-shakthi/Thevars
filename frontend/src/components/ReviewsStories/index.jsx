@@ -6,6 +6,7 @@ const instagramVideos = [
   "https://www.instagram.com/reel/DKRemNBpd_k/embed",
   "https://www.instagram.com/reel/DJoytsvpESh/embed",
   "https://www.instagram.com/reel/DOlGtuyCazV/embed",
+  "https://www.instagram.com/reel/DPba1OiCcWB/embed"
 ];
 
 const ReviewsStories = () => {
@@ -19,7 +20,7 @@ const ReviewsStories = () => {
 
   return (
     <section className="reviews-stories-section">
-      <h2>Our Moments on Instagram</h2>
+      <h2>What Our Client Says</h2>
       <div className="stories-grid">
         {instagramVideos.map((video, index) => (
           <div className="story" key={index}>

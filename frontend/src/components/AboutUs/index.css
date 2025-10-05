@@ -1,20 +1,20 @@
 /* Section styling */
 .about-section {
   width: 100%;
-  background: #8b0000; /* Deep red background */
-  color: #f5deb3; /* Golden wheat text */
-  padding: 10px 20px;
+  background-color: #bc1823;
+  color: #ffffff; /* White text for better contrast */
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
-/* Flex container - split 50/50 on larger screens */
+/* Flex container */
 .about-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  gap: 40px;
+  margin: 50px 0;
+  flex-wrap: wrap;
 }
 
 .about-container.reverse {
@@ -25,16 +25,31 @@
 .about-image {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .about-image img {
   width: 100%;
-  max-width: 540px; /* cap size */
+  max-width: 400px;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.03);
+}
+
+.owner-name {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffd700; /* Golden name text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* Text styling */
@@ -50,18 +65,14 @@
 .about-text h2 {
   font-size: 2rem;
   margin-bottom: 15px;
-  color: gold;
-}
-
-.about-text-head{
-  font-size: 3rem;
-  color: gold;
-text-align: center;
+  color: #ffd700; /* Gold heading */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .about-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 15px;
 }
 
@@ -82,10 +93,15 @@ text-align: center;
 /* Responsive design */
 @media (max-width: 1024px) {
   .about-text h2 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+
   .about-text p {
     font-size: 1rem;
+  }
+
+  .about-image img {
+    max-width: 300px;
   }
 }
 
@@ -101,10 +117,9 @@ text-align: center;
     text-align: center;
   }
 
-  .about-image img {
+  /* .about-image img {
     max-width: 90%;
-    margin: 0 auto;
-  }
+  } */
 }
 
 @media (max-width: 480px) {
@@ -117,7 +132,12 @@ text-align: center;
   }
 
   .about-image img {
-    max-width: 100%;
-    border-radius: 12px;
+    width: 250px;
+        border-radius: 12px;
+  }
+
+  .owner-name {
+    font-size: 1rem;
+    color: #fffbff;
   }
 }

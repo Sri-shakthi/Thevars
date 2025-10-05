@@ -1,31 +1,29 @@
-// AboutSection.jsx
 import React from "react";
 import "./index.css";
-import foImage from "../../assets/fo.png";
-import ssImage from "../../assets/ss.png";
 
 const AboutSection = () => {
   return (
     <section className="about-section">
-      {/* <h1 className="about-text-head">About Us</h1>       */}
       <div className="about-container fade-in">
         <div className="about-image">
-          <img src={foImage} alt="First Restaurant in Kandiyur 1965" />
+          <img src="https://ik.imagekit.io/qbnsahjpu/assets/fff.png?updatedAt=1759688764210" loading="lazy"  alt="New Thevars Hotel - Kandiyur 1965" />
+          <p className="owner-name">K.R.G MUTHU</p>
         </div>
         <div className="about-text">
-          <h2>Our Journey Began</h2>
+          <h2>All About New Thevars</h2>
           <p>
-            The journey of <strong>New Thevars Hotel</strong> began in 1965 at
-            Kandiyur, where it was established as a humble traditional South
-            Indian restaurant. From the very beginning, the hotel earned a name
-            for its authentic flavors, especially the legendary{" "}
+            The story of <strong>New Thevars Hotel</strong> began in{" "}
+            <strong>1965</strong> at <strong>Kandiyur</strong>, founded as a
+            humble South Indian restaurant known for its authentic traditional
+            flavors — especially the legendary{" "}
             <strong>Seeraga Samba Biryani</strong>.
-            <p>
-              By 1990, the restaurant’s unique flavors had made it a well-known
-              name – <strong>Thevars Biryani</strong> – started by{" "}
-              <strong>S. Palani</strong> in Thanjavur, drawing food lovers from
-              near and far, and setting the foundation for a legacy.
-            </p>
+          </p>
+          <p>
+            By <strong>1990</strong>, under the vision of{" "}
+            <strong>S. Palani</strong> in Thanjavur, the restaurant grew in
+            popularity as <strong>Thevars Biryani</strong>, drawing food lovers
+            from near and far and building a reputation that would span
+            generations.
           </p>
         </div>
       </div>
@@ -33,26 +31,28 @@ const AboutSection = () => {
       {/* Second container - Text left, Image right */}
       <div className="about-container fade-in reverse">
         <div className="about-image">
-          <img src={ssImage} alt="Thevars Biryani in 1990s" />
+          <img src="https://ik.imagekit.io/qbnsahjpu/assets/ss.png?updatedAt=1759688763561" loading="lazy"  alt="New Thevars - Continuing Legacy" />
         </div>
         <div className="about-text">
-          <h2 id="legacy-heading">Carrying Forward the Legacy</h2>
+          <h2>Carrying Forward the Legacy</h2>
           <p>
-            In <strong>2007</strong>, the restaurant was rebranded as
-            <strong>New Thevars</strong> by <strong>K R G Muthu</strong>,
-            carrying forward the legacy of our{" "}
-            <strong>Seeraga Samba Biryani</strong> and authentic South Indian
-            flavors.
+            In <strong>2007</strong>, <strong>K.R.G Muthu</strong> took the
+            reins and rebranded the restaurant as{" "}
+            <strong>New Thevars</strong>, preserving the heritage while
+            introducing modern hospitality and dining experiences.
           </p>
-
           <p>
-            Over time, we expanded beyond{" "}
-            <strong>non-vegetarian delicacies</strong> to include{" "}
-            <strong>authentic vegetarian dishes</strong>, making
-            <strong>New Thevars</strong> a place where every food lover feels at
-            home. Today, we blend tradition with modern dining — every recipe is
-            prepared with the same care and authenticity that has defined us
-            since 1965.
+            Under his leadership, <strong>New Thevars</strong> continues to
+            uphold the same authenticity and quality that began in 1965 — now
+            blending tradition with modern tastes. From{" "}
+            <strong>signature non-vegetarian dishes</strong> to{" "}
+            <strong>authentic vegetarian delicacies</strong>, every meal is a
+            reflection of our passion for flavor and culture.
+          </p>
+          <p>
+            Today, <strong>K.R.G Muthu</strong> proudly runs New Thevars,
+            ensuring that every dish continues the rich legacy that has defined
+            the brand for over five decades.
           </p>
         </div>
       </div>

@@ -55,67 +55,68 @@ import combo5 from "../../assets/Combo/chicken biryani+boiled Egg + Tandoori 1_4
 // Dishes arrays
 const vegDishes = [
   // 🍳 Breakfast
-  { name: "Idly Set", img: idlySet },
-  { name: "Mini Idly", img: miniIdly },
-  { name: "Dosa", img: dosa },
-  { name: "Masala Dosa", img: masalaDosa },
-  { name: "Pongal", img: pongal },
-  { name: "Idiyappam Set", img: idiyappamSet },
-  { name: "Poori Set", img: pooriSet },
-  { name: "Chola Puri", img: cholaPuri },
-  { name: "Chapathi Set", img: chapathiSet },
-  { name: "Chilli Paratha", img: chilliParatha },
-  { name: "Kema Paratha", img: kemaParatha },
-  { name: "Paratha Set", img: parathaSet },
+  { name: "Idly Set", img: "https://ik.imagekit.io/qbnsahjpu/assets/idly%20set%20.JPG?updatedAt=1759690985749" },
+  { name: "Mini Idly", img: "https://ik.imagekit.io/qbnsahjpu/assets/Mini%20idily.JPG?updatedAt=1759690980024" },
+  { name: "Dosa", img: "https://ik.imagekit.io/qbnsahjpu/assets/Dosa.JPG?updatedAt=1759690985977" },
+  { name: "Masala Dosa", img: "https://ik.imagekit.io/qbnsahjpu/assets/Masala%20dosa.JPG?updatedAt=1759690987775" },
+  { name: "Pongal", img: "https://ik.imagekit.io/qbnsahjpu/assets/pongal.JPG?updatedAt=1759690986145" },
+  { name: "Idiyappam Set", img: "https://ik.imagekit.io/qbnsahjpu/assets/Idiyappam%20set%20.JPG?updatedAt=1759690963274" },
+  { name: "Poori Set", img: "https://ik.imagekit.io/qbnsahjpu/assets/Poori%20set.JPG?updatedAt=1759690966113" },
+  { name: "Chola Puri", img: "https://ik.imagekit.io/qbnsahjpu/assets/chola%20puri.JPG?updatedAt=1759690964621" },
+  { name: "Chapathi Set", img: "https://ik.imagekit.io/qbnsahjpu/assets/Chapathi%20set%20.JPG?updatedAt=1759690987166" },
+  { name: "Chilli Paratha", img: "https://ik.imagekit.io/qbnsahjpu/assets/Chilli%20poratha.JPG?updatedAt=1759690978285" },
+  { name: "Kema Paratha", img: "https://ik.imagekit.io/qbnsahjpu/assets/Kema%20porata.JPG?updatedAt=1759690980081" },
+  { name: "Paratha Set", img: "https://ik.imagekit.io/qbnsahjpu/assets/paratha%20set.JPG?updatedAt=1759690988206" },
 
   // 🍛 Lunch
-  { name: "Veg Meals", img: vegMeals },
-  { name: "Sambar Rice", img: sambarRice },
-  { name: "Curd Rice", img: curdRice },
-  { name: "Lemon Rice", img: lemonRice },
-  { name: "Coconut Rice", img: coconutRice },
-  { name: "Veg Biryani", img: vegBiryani },
+  { name: "Veg Meals", img: "https://ik.imagekit.io/qbnsahjpu/assets/Veg%20meals%20.JPG?updatedAt=1759690969185" },
+  { name: "Sambar Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/Sambar%20rice%20.JPG?updatedAt=1759690986237" },
+  { name: "Curd Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/curd%20rice%20.JPG?updatedAt=1759690968890" },
+  { name: "Lemon Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/Lemon%20rice%20.JPG?updatedAt=1759690980095" },
+  { name: "Coconut Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/Coconut%20rice%20.JPG?updatedAt=1759690984114" },
+  { name: "Veg Biryani", img: "https://ik.imagekit.io/qbnsahjpu/assets/Veg%20briyani%20.JPG?updatedAt=1759690985416" },
 
   // 🍽️ Dinner / Specials
-  { name: "Veg Fried Rice", img: vegFriedRice },
-  { name: "Veg Noodles", img: vegNoodles },
-  { name: "Mushroom Dosa", img: mushroom },
-  { name: "Mushroom Fried Rice", img: mushroomFriedRice },
-  { name: "Mushroom Noodles", img: mushroomNoodles },
-  { name: "Paneer Dosa", img: paneer },
+  { name: "Veg Fried Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/Veg%20fried%20rice%20.JPG?updatedAt=1759690985475" },
+  { name: "Veg Noodles", img: "https://ik.imagekit.io/qbnsahjpu/assets/veg%20noodles%20.JPG?updatedAt=1759690978485" },
+  { name: "Mushroom Dosa", img: "https://ik.imagekit.io/qbnsahjpu/assets/Mushroom%20.JPG?updatedAt=1759690982372" },
+  { name: "Mushroom Fried Rice", img: "https://ik.imagekit.io/qbnsahjpu/assets/Mushroom%20fried%20rice%20.JPG?updatedAt=1759690982123" },
+  { name: "Mushroom Noodles", img: "https://ik.imagekit.io/qbnsahjpu/assets/Mushroom%20noodles%20.JPG?updatedAt=1759690982270" },
+  { name: "Paneer Dosa", img: "https://ik.imagekit.io/qbnsahjpu/assets/Panner.JPG?updatedAt=1759690985918" },
 ];
 
 
 const nonVegDishes = [
   // 🍗 Chicken
-  { name: "Chicken Biryani", img: chickenBiryani },
-  { name: "Chicken Lappa", img: chickenLappa },
-  { name: "Chicken Majestic", img: chickenMajestic },
-  { name: "Chicken Masala", img: chickenMasala },
-  { name: "Chicken Special Meals", img: chickenSplMeals },
-  { name: "Chicken Wings", img: chickenWings },
-  { name: "Kadai Chicken", img: kadaiChicken },
-  { name: "Parotta", img: paratha },
+  { name: "Chicken Biryani", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/chicken%20briyani%20.JPG?updatedAt=1759690584841" },
+  { name: "Chicken Lappa", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/chicken%20lappa.JPG?updatedAt=1759690582370" },
+  { name: "Chicken Majestic", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/chicken%20majestic%20.JPG?updatedAt=1759690587308" },
+  { name: "Chicken Masala", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/Chicken%20masala.JPG?updatedAt=1759690581910" },
+  { name: "Chicken Special Meals", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/chicken%20spl%20meals%20.JPG?updatedAt=1759690587058" },
+  { name: "Chicken Wings", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/Chicken%20wings%20.JPG?updatedAt=1759690562920" },
+  { name: "Kadai Chicken", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/kadai%20chicken%20.JPG?updatedAt=1759690587221" },
+  { name: "Parotta", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/paratha.JPG?updatedAt=1759690583754" },
+  { name: "Kothu Parotta", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/kothu%20poratha.JPG?updatedAt=1759690587483"},
 
   // 🐟 Fish
-  { name: "Fish Curry", img: fishCurry },
-  { name: "Fish Fry", img: fishFry },
-  { name: "Fish Special Meals", img: fishSplMeals },
-  { name: "Nethili Fish Fry", img: nethiliFishFry },
+  { name: "Fish Curry", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/fish%20curry%20.JPG?updatedAt=1759690586156" },
+  { name: "Fish Fry", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/fish%20fry.JPG?updatedAt=1759690578380" },
+  { name: "Fish Special Meals", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/Fish%20spl%20meals%20.JPG?updatedAt=1759690584877" },
+  { name: "Nethili Fish Fry", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/nethili%20fish%20fry%20.JPG?updatedAt=1759690573237" },
 
   // 🐑 Mutton
-  { name: "Mutton Biryani", img: muttonBiryani },
-  { name: "Mutton Masala", img: muttonMasala },
-  { name: "Mutton Special Meals", img: muttonSplMeals },
+  { name: "Mutton Biryani", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/mutton%20briyani%20.JPG?updatedAt=1759690579964" },
+  { name: "Mutton Masala", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/Mutton%20masala.JPG?updatedAt=1759690582060" },
+  { name: "Mutton Special Meals", img: "https://ik.imagekit.io/qbnsahjpu/assets/Non%20Veg/mutton%20spl%20meals%20.JPG?updatedAt=1759690586308" },
 ];
 
 
 const comboDishes = [
-  { name: "Kothu Parotta + Chicken Tikka", img: combo1 },
-  { name: "Butter Kulcha + Butter Chicken Masala", img: combo2 },
-  { name: "Butter Naan + Paneer Butter Masala", img: combo3 },
-  { name: "Parotta + Chicken Hyderabadi", img: combo4 },
-  { name: "Chicken Biryani + Boiled Egg + Tandoori (1/4)", img: combo5 },
+  { name: "Kothu Parotta + Chicken Tikka", img: "https://ik.imagekit.io/qbnsahjpu/assets/Combo/2%20kothu%20parotta+%20chicken%20tikka.jpg?updatedAt=1759688913951" },
+  { name: "Butter Kulcha + Butter Chicken Masala", img: "https://ik.imagekit.io/qbnsahjpu/assets/Combo/3%20butter%20kulcha%20+%20butter%20chicken%20masala.jpg?updatedAt=1759688941579" },
+  { name: "Butter Naan + Paneer Butter Masala", img: "https://ik.imagekit.io/qbnsahjpu/assets/Combo/3%20butter%20naan%20+%20panner%20butter%20masala.jpg?updatedAt=1759688860615" },
+  { name: "Parotta + Chicken Hyderabadi", img: "https://ik.imagekit.io/qbnsahjpu/assets/Combo/6%20parotta%20+%20chicken%20hyderabadi.jpg?updatedAt=1759689571904" },
+  { name: "Chicken Biryani + Boiled Egg + Tandoori (1/4)", img: "https://ik.imagekit.io/qbnsahjpu/assets/Combo/chicken%20biryani+boiled%20Egg%20+%20Tandoori%201_4.jpg?updatedAt=1759688694611" },
 ];
 
 
@@ -160,7 +161,7 @@ export default function Menu() {
       <div className="menu-container">
         {dishes.map((dish, idx) => (
           <div key={idx} className="menu-card">
-            <img src={dish.img} alt={dish.name} />
+            <img src={dish.img} loading="lazy" alt={dish.name} />
             <div className="overlay">
               <h3>{dish.name}</h3>
             </div>
