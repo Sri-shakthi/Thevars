@@ -341,6 +341,21 @@ export default function CateringQuotation() {
         mode: "no-cors",
       });
       setIsSubmitted(true);
+      const ownerNumber = "918148862142"; // ✅ only digits, no +
+        const message = encodeURIComponent(
+        `Hello, I'd like a catering quote.\n\n` +
+          `Name: ${formData.name}\n` +
+          `Mobile: ${formData.mobile}\n` +
+          `Event Date: ${formData.eventDate}\n` +
+          `Event Type: ${formData.eventType}\n` +
+          `Guests: ${formData.guests}\n` +
+          `Selected Pack: ${formData.selectedPack}\n` +
+          (formData.customDishes.length > 0
+            ? `Custom Dishes: ${formData.customDishes.join(", ")}`
+            : "")
+      );
+      // More reliable than window.open
+      window.location.href = `https://wa.me/${ownerNumber}?text=${message}`;
     } catch (error) {
       console.error(error);
       alert("Failed to submit quotation. Please try again.");
